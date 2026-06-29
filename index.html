@@ -17,6 +17,9 @@
     background:linear-gradient(180deg,#eef4f9 0%,#e4edf4 100%);color:var(--navy);line-height:1.5;-webkit-font-smoothing:antialiased;}
   .wrap{max-width:1280px;margin:0 auto;padding:22px 24px 48px;}
 
+  /* shared effect colours */
+  .pos{color:#0b6e4f;font-weight:800;} .neg{color:#b0392f;font-weight:800;} .neu{color:var(--muted);font-weight:700;}
+
   header.top{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;margin-bottom:20px;}
   .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);}
   .title-card{padding:22px 26px;}
@@ -26,7 +29,7 @@
   .teacher{background:var(--ice);border:1px solid #d3e2ee;border-radius:12px;padding:11px 14px;font-size:13px;color:var(--navy-2);}
   .teacher b{color:var(--navy);}
 
-  .meter-card{padding:20px 22px;display:flex;flex-direction:column;gap:16px;}
+  .meter-card{padding:20px 22px;display:flex;flex-direction:column;gap:15px;}
   .meter-head{display:flex;align-items:center;justify-content:space-between;}
   .meter-head .lab{font-weight:700;font-size:14px;}
   .pill{font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px;background:var(--ice);border:1px solid #cfe0ec;color:var(--navy-2);}
@@ -38,8 +41,12 @@
   .track .fill{height:100%;border-radius:999px;width:0%;background:linear-gradient(90deg,#0f9d6e 0%,#e0a23a 55%,#d6453d 100%);transition:width .55s cubic-bezier(.22,.61,.36,1);}
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
   .stat{background:var(--ice);border:1px solid #d6e3ee;border-radius:11px;padding:10px 8px;text-align:center;}
-  .stat .num{font-size:20px;font-weight:800;line-height:1;}
+  .stat .num{font-size:22px;font-weight:800;line-height:1;}
+  .stat .num .den{font-size:11px;font-weight:600;color:var(--muted);margin-left:1px;}
   .stat .cap{font-size:11px;color:var(--muted);margin-top:5px;font-weight:600;}
+  .defs{display:flex;flex-direction:column;gap:5px;border-top:1px solid var(--line);padding-top:12px;}
+  .defs p{margin:0;font-size:11.5px;color:var(--slate);line-height:1.4;}
+  .defs b{color:var(--navy);}
 
   .progress{display:flex;align-items:center;gap:8px;margin:0 0 16px;}
   .dot{width:9px;height:9px;border-radius:50%;background:#cdd9e4;transition:.3s;}
@@ -51,20 +58,18 @@
   .panel{padding:18px;}
   .panel h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 12px;font-weight:700;}
 
-  /* flags */
   .flag-svg{height:15px;width:auto;display:inline-block;vertical-align:middle;border:1px solid rgba(15,37,64,.18);border-radius:2px;}
 
-  /* Role cards */
   .role{width:100%;text-align:left;border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:9px;cursor:pointer;background:#fff;transition:.15s;display:block;font-family:inherit;}
   .role:hover{box-shadow:var(--shadow);}
   .role.sel{border-color:var(--navy);box-shadow:0 0 0 2px rgba(15,37,64,.12);}
   .role .rn{font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:9px;}
   .role .ri{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.4;padding-left:34px;}
-  .inst-note{margin-top:12px;background:var(--ice);border:1px solid #d6e3ee;border-radius:11px;padding:11px 13px;}
-  .inst-note .pt{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--navy-2);margin-bottom:5px;}
-  .inst-note p{margin:0;font-size:12.5px;color:var(--slate);}
+  .inst-note{margin-top:12px;background:var(--ice);border:1px solid #d6e3ee;border-radius:11px;padding:12px 13px;}
+  .inst-note .pt{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--navy-2);margin-bottom:6px;}
+  .inst-note p{margin:0;font-size:12.5px;color:var(--slate);line-height:1.5;}
+  .inst-note b{color:var(--navy);}
 
-  /* Opening brief */
   .brief{padding:4px 4px 8px;}
   .brief .flags-row{display:flex;gap:12px;justify-content:center;margin-bottom:18px;}
   .brief .flags-row .flag-svg{height:26px;}
@@ -79,7 +84,6 @@
   .crow .cd{font-size:13px;color:var(--muted);margin-top:2px;}
   .brief .go{text-align:center;font-size:14px;font-weight:600;color:var(--navy);margin:0;}
 
-  /* Round centre */
   .youare{display:flex;align-items:center;gap:12px;background:var(--navy);color:#fff;border-radius:12px;padding:11px 15px;margin-bottom:16px;}
   .youare .yflag .flag-svg{height:24px;border-color:rgba(255,255,255,.5);}
   .youare .yt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;font-weight:700;}
@@ -89,16 +93,16 @@
   .badge-ico svg{width:24px;height:24px;}
   .round-head h3{margin:0;font-size:21px;letter-spacing:-.01em;}
   .round-head .ctx{margin:6px 0 0;font-size:14px;color:var(--slate);}
-  .qbox{background:var(--ice);border:1px solid #d6e3ee;border-left:4px solid var(--navy);border-radius:10px;padding:13px 15px;margin-bottom:16px;}
+  .qbox{background:var(--ice);border:1px solid #d6e3ee;border-left:4px solid var(--navy);border-radius:10px;padding:13px 15px;margin-bottom:10px;}
   .qbox .ql{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);}
   .qbox .qt{font-size:16px;font-weight:600;margin-top:3px;color:var(--navy);}
+  .fxkey{font-size:11.5px;color:var(--muted);margin:0 0 14px;padding-left:2px;}
+  .fxkey .g{color:#0b6e4f;font-weight:800;} .fxkey .r{color:#b0392f;font-weight:800;}
   .opts{display:flex;flex-direction:column;gap:11px;}
   .opt{text-align:left;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fff;cursor:pointer;transition:.15s;font-family:inherit;position:relative;}
   .opt:hover{border-color:var(--navy-2);box-shadow:var(--shadow);transform:translateY(-1px);}
   .opt .ol{font-weight:700;font-size:14.5px;color:var(--navy);padding-right:78px;}
-  .opt .om{font-size:12.5px;color:var(--muted);margin-top:7px;display:flex;gap:14px;flex-wrap:wrap;}
-  .om .tag{font-weight:700;}
-  .om .pos{color:#0b6e4f;} .om .neg{color:#b0392f;} .om .neu{color:var(--muted);}
+  .opt .om{font-size:12.5px;color:var(--muted);margin-top:7px;display:flex;gap:16px;flex-wrap:wrap;}
   .opt .kind{position:absolute;top:13px;right:14px;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:999px;}
   .kind.coop{background:#e6f6ef;color:#0b6e4f;}
   .kind.firm{background:#fbf1dc;color:#9a6b12;}
@@ -131,7 +135,7 @@
   .logitem .lr{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);display:flex;align-items:center;gap:7px;}
   .logitem .lr .flag-svg{height:11px;}
   .logitem .ll{font-size:13px;font-weight:600;color:var(--navy);margin-top:3px;}
-  .logitem .deltas{font-size:11.5px;color:var(--muted);margin-top:4px;}
+  .logitem .deltas{font-size:11.5px;color:var(--muted);margin-top:5px;display:flex;gap:13px;}
   .btn{width:100%;margin-top:14px;border:1px solid var(--line);border-radius:11px;background:var(--ice);color:var(--navy);font-weight:700;font-size:13.5px;padding:11px;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;transition:.15s;}
   .btn:hover{background:#dceaf4;}
   .btn svg{width:16px;height:16px;}
@@ -163,9 +167,14 @@
         <div class="track" style="margin-top:10px;"><div class="fill" id="riskFill"></div></div>
       </div>
       <div class="stats">
-        <div class="stat"><div class="num" id="sComp">0</div><div class="cap">Competition</div></div>
-        <div class="stat"><div class="num" id="sGov">0</div><div class="cap">Governance</div></div>
-        <div class="stat"><div class="num" id="sRisk">0</div><div class="cap">Risk score</div></div>
+        <div class="stat"><div class="num" id="sComp">0<span class="den">/5</span></div><div class="cap">Competition</div></div>
+        <div class="stat"><div class="num" id="sGov">0<span class="den">/5</span></div><div class="cap">Governance</div></div>
+        <div class="stat"><div class="num" id="sRisk">0<span class="den">/5</span></div><div class="cap">Risk</div></div>
+      </div>
+      <div class="defs">
+        <p><b>Competition</b> — how hard states push rival claims, military presence and control of the seabed.</p>
+        <p><b>Governance</b> — how far disputes run through international law and institutions (the UNCLOS treaty, the Arctic Council, diplomacy) instead of unilateral action. Higher is more rules-based.</p>
+        <p><b>Risk</b> — the chance competition tips into a sovereignty (territorial integrity) crisis.</p>
       </div>
     </div>
   </header>
@@ -177,8 +186,8 @@
       <h2>Choose your country</h2>
       <div id="roles"></div>
       <div class="inst-note">
-        <div class="pt">Where are the institutions?</div>
-        <p>UNCLOS and the Arctic Council aren't players here — they appear as <b>choices</b>. In each round, one option is the cooperative path (submit your claim to UNCLOS, or work through the Arctic Council). Whether states take it is the whole question.</p>
+        <div class="pt">The rules vs the institutions</div>
+        <p><b>UNCLOS is a treaty</b> — the agreed rulebook for the sea — <b>not an institution</b>. The institutions are the bodies that apply it: the <b>Arctic Council</b> and the UN's <b>Commission on the Limits of the Continental Shelf (CLCS)</b>. Neither the treaty nor these bodies is a player here — they appear as <b>choices</b>. Each round, one option is the cooperative path: take your seabed claim to the CLCS under UNCLOS, or work through the Arctic Council. Whether states choose it is the whole question.</p>
       </div>
     </div>
 
@@ -194,7 +203,7 @@
     </div>
   </section>
 
-  <p class="footnote">The Arctic is <b>not yet</b> a Ukraine-style territorial integrity crisis. Treat it as a pre-conflict test of global governance: a region where overlapping legal claims, hard national interests and institutions like UNCLOS are still competing to decide the outcome.</p>
+  <p class="footnote">The Arctic is <b>not yet</b> a Ukraine-style territorial integrity crisis. Treat it as a pre-conflict test of global governance: a region where overlapping legal claims and hard national interests are still being shaped by the UNCLOS treaty, the Arctic Council and diplomacy — not yet by force.</p>
 </div>
 
 <script>
@@ -202,11 +211,11 @@ const actors = [
   {id:"russia", name:"Russia",
    interest:"Longest Arctic coastline, the Northern Sea Route, hydrocarbons, and an extended shelf claim over the Lomonosov Ridge."},
   {id:"canada", name:"Canada",
-   interest:"The Northwest Passage, Arctic sovereignty, and an overlapping central-Arctic shelf claim."},
+   interest:"The Northwest Passage, Arctic sovereignty, and an overlapping central-Arctic shelf claim across the Lomonosov Ridge."},
   {id:"denmark", name:"Denmark / Greenland",
    interest:"Greenland, rare earths and minerals, and a shelf claim that also crosses the Lomonosov Ridge."},
   {id:"usa", name:"United States",
-   interest:"Alaska, freedom of navigation and access to Greenland — but not a party to UNCLOS, which weakens its formal claims."}
+   interest:"Alaska, freedom of navigation and access to Greenland — but has not ratified the UNCLOS treaty, which weakens its formal claims."}
 ];
 
 /* ---- inline SVG flags (render everywhere, unlike emoji on Windows) ---- */
@@ -220,7 +229,6 @@ function flagSVG(id){
   if(id==="canada"){
     return `<svg class="flag-svg" viewBox="0 0 40 20"><rect width="40" height="20" fill="#fff"/><rect width="10" height="20" fill="#D52B1E"/><rect x="30" width="10" height="20" fill="#D52B1E"/><g transform="translate(20,10) scale(0.082) translate(-100,-100)"><path fill="#D52B1E" d="M100,20 110,52 123,45 118,66 143,60 133,84 157,88 146,99 180,96 151,114 163,128 138,122 150,150 120,138 110,150 110,185 90,185 90,150 80,138 50,150 62,122 37,128 49,114 20,96 54,99 43,88 67,84 57,60 82,66 77,45 90,52 Z"/></g></svg>`;
   }
-  // United States
   const W=15.2, H=10.769, sh=20/13;
   let stripes='';
   for(let i=1;i<13;i+=2){ stripes+=`<rect y="${(i*sh).toFixed(3)}" width="38" height="${sh.toFixed(3)}" fill="#fff"/>`; }
@@ -266,8 +274,8 @@ const rounds = [
     options:[
       {label:"Claim the Lomonosov Ridge as your shelf — unilaterally", kind:"hard", comp:3, gov:-1, risk:2,
        note:"You argue the ridge is a natural prolongation of your landmass. So do your rivals. The dispute shifts from value to sovereignty — who owns the seabed?"},
-      {label:"Submit your shelf claim with scientific evidence to UNCLOS (the CLCS)", kind:"coop", comp:1, gov:2, risk:-1,
-       note:"Rivalry is channelled into a legal-technical process. The argument becomes about data and law, not force — though the UN body cannot settle overlapping claims itself."},
+      {label:"Submit your shelf claim, with scientific evidence, to the CLCS under UNCLOS", kind:"coop", comp:1, gov:2, risk:-1,
+       note:"Rivalry is channelled into a legal-technical process — the argument becomes about data and law, not force. But the CLCS only confirms how far a shelf extends; it cannot decide between two states claiming the same seabed."},
       {label:"License extraction only in your undisputed zone", kind:"firm", comp:1, gov:1, risk:0,
        note:"Economic activity continues, but you avoid the contested ridge. Tension depends on whether rivals respect the line you've drawn."}
     ]
@@ -280,8 +288,8 @@ const rounds = [
       {label:"Demand prior permission — these are your national waters", kind:"firm", comp:2, gov:0, risk:1,
        note:"Treating the passage as internal waters asserts control, but clashes with states that view it as an international strait open to all."},
       {label:"Send your own vessels to assert freedom of navigation", kind:"hard", comp:3, gov:-1, risk:2,
-       note:"The principle of innocent passage collides head-on with a national claim. This is where law and power directly conflict — and where an incident could ignite."},
-      {label:"Agree common safety and environmental rules via the Arctic Council", kind:"coop", comp:0, gov:2, risk:-1,
+       note:"The principle of freedom of navigation collides head-on with a national claim over the same waters. This is where law and power directly conflict — and where an incident could ignite."},
+      {label:"Agree shared search-and-rescue and environmental rules via the Arctic Council", kind:"coop", comp:0, gov:2, risk:-1,
        note:"Cooperation doesn't resolve who owns the route, but functional governance lowers the chance of a stand-off becoming a crisis."}
     ]
   },
@@ -290,7 +298,7 @@ const rounds = [
     context:"Claims overlap and the legal process has stalled — UNCLOS can structure a dispute but cannot force a final ruling all sides accept. A rival's claim now overlaps yours.",
     question:"With no settlement in sight, do you stay inside the rules?",
     options:[
-      {label:"Comply: accept the UNCLOS process and keep negotiating diplomatically", kind:"coop", comp:-1, gov:3, risk:-2,
+      {label:"Comply: accept the UNCLOS legal process and keep negotiating", kind:"coop", comp:-1, gov:3, risk:-2,
        note:"You accept a contested, unresolved Arctic rather than force the issue. Governance holds — the region stays tense but managed."},
       {label:"Hedge: negotiate publicly, but strengthen your position on the ground", kind:"firm", comp:1, gov:1, risk:1,
        note:"The most realistic outcome on current evidence: states stay broadly within the rules while quietly competing. Risk rises slowly."},
@@ -304,11 +312,23 @@ let state = { round:0, actor:null, history:[], choiceMade:null };
 
 function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
 function totals(){ return state.history.reduce((acc,m)=>({comp:acc.comp+m.comp, gov:acc.gov+m.gov, risk:acc.risk+m.risk}),{comp:0,gov:0,risk:0}); }
-function riskValue(){ return clamp(totals().risk, -5, 12); }
-function riskBand(v){ if(v<=0)return{i:0,label:"Contained"}; if(v<=4)return{i:1,label:"Emerging tension"}; if(v<=7)return{i:2,label:"Serious risk"}; return{i:3,label:"Crisis likely"}; }
+
+/* scale a running total onto 0-5 across the whole 4-round game */
+function scaled(total,min,max){ return clamp((total-min)/(max-min)*5, 0, 5); }
+function compLevel(){ return scaled(totals().comp, 0, 11); }
+function govLevel(){ return scaled(totals().gov, -4, 9); }
+function riskCont(){ return scaled(totals().risk, -5, 8); }
+function riskLevel(){ return Math.round(riskCont()); }
+
+function riskBand(level){
+  if(level<=1) return {i:0,label:"Contained"};
+  if(level<=3) return {i:1,label:"Emerging tension"};
+  if(level<=4) return {i:2,label:"Serious risk"};
+  return {i:3,label:"Crisis likely"};
+}
 const verdictText = [
   {lab:"Outcome — Contained", t:"Governance holds.",
-   d:"Institutions absorbed the pressure from melting ice, resource value and route control. The Arctic stays contested but disputes run through UNCLOS and the Arctic Council, not force. Global governance passes the test."},
+   d:"Institutions absorbed the pressure from melting ice, resource value and route control. The Arctic stays contested but disputes run through the UNCLOS rulebook and bodies like the Arctic Council, not force. Global governance passes the test."},
   {lab:"Outcome — Emerging tension", t:"Managed, but unresolved.",
    d:"Competition is real and rising, yet still bounded by legal claims and negotiation. This is closest to the Arctic's actual position today: tense, not in crisis."},
   {lab:"Outcome — Serious risk", t:"Approaching the edge.",
@@ -317,14 +337,25 @@ const verdictText = [
    d:"States have prioritised strategic interest over legal process. The Arctic now resembles the pre-conflict conditions this question was built to test."}
 ];
 
+/* effect arrows: green = stabilising, red = escalating */
+function fx(metric, v){
+  if(v===0) return '<span class="neu">–</span>';
+  const up=v>0, big=Math.abs(v)>=2;
+  const arrow=(up?'▲':'▼').repeat(big?2:1);
+  const good = (metric==='gov') ? up : !up; // governance up = good; competition/risk down = good
+  return `<span class="${good?'pos':'neg'}">${arrow}</span>`;
+}
+
+function setTile(id,n){ document.getElementById(id).innerHTML = n+'<span class="den">/5</span>'; }
+
 function renderMeter(){
-  const t=totals(), ar=riskValue(), band=riskBand(ar);
-  document.getElementById("sComp").textContent=t.comp;
-  document.getElementById("sGov").textContent=t.gov;
-  document.getElementById("sRisk").textContent=ar;
-  const pill=document.getElementById("riskPill");
-  pill.textContent=band.label; pill.className="pill s"+band.i;
-  document.getElementById("riskFill").style.width=(((ar+5)/17)*100)+"%";
+  setTile('sComp', Math.round(compLevel()));
+  setTile('sGov', Math.round(govLevel()));
+  setTile('sRisk', riskLevel());
+  const band=riskBand(riskLevel());
+  const pill=document.getElementById('riskPill');
+  pill.textContent=band.label; pill.className='pill s'+band.i;
+  document.getElementById('riskFill').style.width=(riskCont()/5*100)+'%';
 }
 function renderProgress(){
   const p=document.getElementById("progress");let h="";
@@ -345,7 +376,6 @@ function renderRoles(){
     </button>`).join("");
   c.querySelectorAll(".role").forEach(b=>b.onclick=()=>{ if(state.history.length>0&&state.actor){return;} state.actor=b.dataset.id; renderRoles(); renderCentre(); });
 }
-function deltaTag(v){ if(v>0)return `<span class="tag pos">+${v}</span>`; if(v<0)return `<span class="tag neg">${v}</span>`; return `<span class="tag neu">0</span>`; }
 
 function renderCentre(){
   const centre=document.getElementById("centre");
@@ -370,7 +400,7 @@ function renderCentre(){
   const done=state.history.length>=rounds.length;
 
   if(done){
-    const ar=riskValue(), band=riskBand(ar), v=verdictText[band.i];
+    const band=riskBand(riskLevel()), v=verdictText[band.i];
     centre.innerHTML=`
       <div class="youare"><span class="yflag">${flagSVG(me.id)}</span><div><div class="yt">You played as</div><div class="yn">${me.name}</div></div></div>
       <div class="outcome-flag"><div class="badge-ico">${icons.alert}</div><h3 style="margin:0;font-size:21px;">Simulation outcome</h3></div>
@@ -391,7 +421,7 @@ function renderCentre(){
     <button class="opt" data-i="${i}">
       <span class="kind ${o.kind}">${o.kind==='coop'?'Cooperative':o.kind==='firm'?'Measured':'Assertive'}</span>
       <div class="ol">Option ${i+1}: ${o.label}</div>
-      <div class="om"><span>Competition ${deltaTag(o.comp)}</span><span>Governance ${deltaTag(o.gov)}</span><span>Risk ${deltaTag(o.risk)}</span></div>
+      <div class="om"><span>Competition ${fx('comp',o.comp)}</span><span>Governance ${fx('gov',o.gov)}</span><span>Risk ${fx('risk',o.risk)}</span></div>
     </button>`).join("");
 
   let revealHTML="";
@@ -408,6 +438,7 @@ function renderCentre(){
     <div class="round-head"><div class="badge-ico">${icons[r.ico]}</div>
       <div><h3>${r.title}</h3><p class="ctx">${r.context}</p></div></div>
     <div class="qbox"><div class="ql">Decision — what will you do?</div><div class="qt">${r.question}</div></div>
+    <div class="fxkey">Each option shows its effect: <span class="g">green ▲▼ = stabilising</span> · <span class="r">red ▲▼ = escalating</span>.</div>
     <div class="opts">${optsHTML}</div>${revealHTML}`;
 
   if(state.choiceMade===null){
@@ -422,7 +453,7 @@ function renderLog(){
   const fl=state.actor?flagSVG(state.actor):'';
   l.innerHTML=state.history.map(m=>`
     <div class="logitem"><div class="lr">${fl} ${m.round}</div><div class="ll">${m.label}</div>
-      <div class="deltas">Comp ${m.comp>=0?'+':''}${m.comp} · Gov ${m.gov>=0?'+':''}${m.gov} · Risk ${m.risk>=0?'+':''}${m.risk}</div></div>`).join("");
+      <div class="deltas"><span>Comp ${fx('comp',m.comp)}</span><span>Gov ${fx('gov',m.gov)}</span><span>Risk ${fx('risk',m.risk)}</span></div></div>`).join("");
 }
 
 function choose(i){ state.choiceMade=i; renderCentre(); }
